@@ -1,0 +1,52 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="css/estilo.css">       
+        <script src="js/imc.js"></script>
+    </head>
+    <body>
+        <div class="tabela">
+            <div>
+                <ul>
+                    <h4> Tabela IMC: </h4>
+                    <li>Entre 18,5 e 24,9 - <strong> Peso normal</strong></li>
+                    <li>Entre 25 e 29,9	- <strong>Sobrepeso</strong></li>
+                    <li>Entre 30 e 34,9 - <strong>Obesidade grau 1</strong></li>
+                    <li>Entre 35 e 39,9 - <strong>Obesidade grau 2</strong></li>                    
+                </ul>
+
+                 <!-- <h4> Tabela IMC: </h4>  
+            </div> 
+            <div>
+                <p>Entre 18,5 e 24,9 - <strong> Peso normal</strong></p>
+                <p>Entre 25 e 29,9	- <strong>Sobrepeso</strong></p>
+                <p>Entre 30 e 34,9 - <strong>Obesidade grau 1</strong></p>
+                <p>Entre 35 e 39,9 - <strong>Obesidade grau 2</strong> </p>
+                 -->
+            </div>         
+        </div>
+        <div class="card">
+                <div class="cabecalho">
+                    <h1>Calculadora IMC</h1>
+                </div>
+                <div class="corpo">
+                    <div class="esquerdo">
+                        <label for="peso">Peso</label><br>
+                        <input type="number" placeholder="Peso" id="peso">
+                        
+                    </div>
+                    <div class="direito">
+                        <label for="altura">Altura</label><br>
+                        <input type="number" placeholder="Altura" id="altura">
+                    </div>
+                </div>
+                <div class="botao">
+                    <button onclick="Calcular(peso,altura)">Calcular IMC</button>
+                </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+

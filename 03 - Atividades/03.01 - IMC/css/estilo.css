@@ -1,0 +1,38 @@
+body{
+    background-image: url("https://www.mentalidadefit.com.br/wp-content/uploads/2016/06/vida-saud%C3%A1vel-o-que-fazer-para-ter2.jpg");
+}
+.tabela{
+    width: 25%;    
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card{
+    border-width: 08px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    width: 50%;
+    margin: 310px auto;
+}
+.cabecalho{
+    width: 95%;
+}
+.corpo{
+        
+    width: 60%;
+    margin: auto;
+}
+.esquerdo{
+    width: 50%;
+    float: left;
+    
+}
+.direito{
+    width: 50%;
+    float:right;
+}
+.botao{
+   
+    margin: 80px;
+    padding: 15px;
+}

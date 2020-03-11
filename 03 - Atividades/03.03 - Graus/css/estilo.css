@@ -1,0 +1,12 @@
+body{
+    background-image: url("https://img.cancaonova.com/cnimages/canais/uploads/sites/11/2018/12/Termometro-de-alta-Degres-do-sol.-Dia-quente-de-verao.-Altas-temperaturas-de-verao.jpg");
+}
+.card{
+    width: 50%;
+    margin: 80px auto;
+    text-align: center;
+}
+.corpoDes{
+    width: 100%;
+    margin: 15px auto;
+}

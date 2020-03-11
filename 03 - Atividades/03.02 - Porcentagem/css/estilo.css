@@ -1,0 +1,57 @@
+body{
+  background-image: url("https://media.istockphoto.com/vectors/math-seamless-background-vector-id164540636");
+}
+.card{
+    border-width: 15px;
+    border-style: solid;
+    border-color: black;
+   background-color:#f1f1f1;
+    width: 50%;
+    text-align: center;
+    margin:150px auto;
+    
+   
+    
+}
+.cabecalho{
+    
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    
+
+}
+.corpo{
+    
+    width: 60%; 
+    margin: 10px auto;
+    padding: 10px; 
+    
+    
+}
+.corpodiv{
+    width: 100%;
+}
+.esquerdo{
+    
+    float: left;
+    width: 50%;
+}
+.direito{
+    
+    float: right;
+    width: 50%;
+}   
+
+.botao{    
+    width: 50%;
+    margin: 30px auto;
+    padding: 15px;   
+}
+.bt{
+    cursor: pointer;
+    width: 80%;
+    background-color:rgb(206, 206, 206);
+    color: black;
+    
+}

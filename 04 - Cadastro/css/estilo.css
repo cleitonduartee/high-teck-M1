@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+h1{
+    margin: 0px;
+}
+nav{
+    background-color: rgb(9, 163, 198);
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    box-shadow: 5px 0px 10px gray
+}
+/* padding 0 tira o ponto da lista */
+nav ul{
+    margin: 0px;
+    padding: 0px;
+}
+nav li{
+    padding: 10px;
+    list-style: none;    
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav li:hover{
+    background-color: rgb(13, 101, 121);
+}
+main{
+    width: 67%;
+    float: right;
+}
