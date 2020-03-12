@@ -34,6 +34,37 @@ nav li:hover{
     background-color: rgb(13, 101, 121);
 }
 main{
-    width: 67%;
+    width: 70%;
     float: right;
+    padding: 40px;
+    box-sizing: border-box;
+}
+form{
+    width: 70%;
+    
+}
+form div{
+    margin-top: 20px;
+    margin-bottom: 20px;/* aplica margin enbaixo*/
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="datetime-local"]
+{
+    width: 100%;
+    padding: 10px;
+}
+form button{
+    background-color: rgb(9, 163, 198);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+   
+}
+form button:hover{
+    background-color: rgb(13, 101, 121);
+    cursor: pointer;
+}
+.alinhar-center{
+    text-align: center;
 }
