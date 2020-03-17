@@ -1,78 +1,78 @@
 <html>
     <head>
-        <meta charset="UTF-8"> 
-        <title>Cadastro Cliente</title>
         <script src="js/script.js"></script>
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
         <nav id="menu">
+            <img src="img/close.png" alt="menu" onclick="fecharMenu()" id="imgfechar">
             <h2>Menu</h2>
             <ul>
-                <a href="#"><li>Usuário</li></a> 
-                <a href="#"><li>Cliente</li></a>
-                <a href="#"><li>Professor</li></a>
-                <a href="#"><li>Curso</li></a>
-                <a href="#"><li>Sair</li></a>               
+                <li><a href=""> Usuário</a></li>
+                <li><a href="">Cliente</a></li>
+                <li><a href="">Professor</a></li>
+                <li><a href="">Curso</a></li>
+                <li><a href="">Sair</a></li>
             </ul>
         </nav>
-        <main>
+        <main id="corpo">
+            <img src="img/menu.png" alt="menu" onclick="abrirMenu()" id="imgmenu" class="iniciar">
             <h1>Cadastro de Cliente</h1>
-            <form >
-                <div>
-                    <input type="text" placeholder="Nome" id="nome">
-                </div>
-
-                <div>
-                    <input type="email" id="email" placeholder="email">
-                </div>
-                <!-- o name está com o mesmo nome, para ser auto exclusivo, masculino ou feminino, se não fizer isso deixa a possibilidade de selecionar os 2 -->
-                <div>
-                    <label for="">Sexo: </label>
-                    <label for="masc">Masculino</label>
-                    <input type="radio" name="sexo" id="masc">
-                    <label for="fem">Feminino</label>
-                    <input type="radio" name="sexo" id="fem">
-                </div>
-                <!-- fieldset é a caixinha -->
-                <fieldset>
-                    <!-- legend é o titulo do fieldset -->
-                    <legend>Cursos de interesse</legend>
+            <div>
+                <form>
                     <div>
-                       <input type="checkbox" name="cursos" id="web">
-                       <label for="web">Curso de desenvolvimento Web</label>
+                        <input type="text" placeholder="Nome">
                     </div>
                     <div>
-                        <input type="checkbox" name="cursos" id="mobile">
-                        <label for="mobile">Curso de desenvolvimento Mobile</label>
-                     </div>
-                     <div>
-                        <input type="checkbox" name="cursos" id="desktop">
-                        <label for="desktop">Curso de desenvolvimento Desktop</label>
-                     </div>                    
-                </fieldset>
-                <div>
-                    <label>Estado:</label>
-                    <select name="estado" id="estado">
-                        <option value="">Selecione</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="SP">São Paulo</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="foto">Foto:</label>
-                    <input type="file" name="foto" id="foto" value="Selecione sua foto...">
-                </div>
-                <div>
-                    <label for="datanasc">Data de nascimento</label>
-                    <input type="datetime-local" name="datanasc" id="datanasc">
-                </div>
-                <div class="alinhar-center">
-                    <button type="button">Salvar</button>
-                </div>
-            </form>
+                        <input type="email" placeholder="email">
+                    </div>
+                    <div>
+                        <label for="sexo">Sexo: </label>
+                        <label for="sexo">Masculino</label>
+                        <input type="radio" name="sexo" id="masc">
+                        <label for="sexo">Feminino</label>
+                        <input type="radio" name="sexo" id="femin">
+                    </div>
+                    <fieldset>
+                        <legend>Cursos de interesse</legend>
+                        <div>
+                            <input type="checkbox" name="curso" id="web">
+                            <label>Curso de desenvolvimento Web</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="curso" id="mobile">
+                            <label>Curso de desenvolvimento Mobile</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="curso" id="desktop">
+                            <label>Curso de desenvolvimento Desktop</label>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <label>Estado: </label>
+                        <select name="estado" id="estado">
+                            <option value="">Selecione</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="SP">São Paulo</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Foto: </label>
+                        <input type="file" name="foto" id="foto">
+                    </div>
+                    <div>
+                        <label>Data de nascimento</label>
+                        <input type="datetime-local" name="nasc" id="nasc">
+                    </div>
+                    <div class="alinhar">
+                        <button type="button">Salvar</button>
+                    </div>
+                </form>
+            </div>
         </main>
+
+        
         
     </body>
 </html>

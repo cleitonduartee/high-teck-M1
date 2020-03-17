@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro Usuário</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/cadastro.js"></script>        
+    </head>
+    <body>
+        <nav id="menu">
+            <img src="img/close.png" alt="fecharmenu" onclick="fecharMenu()">
+            <h2>Menu</h2>
+            <ul>
+               <li> <a href="#">Usuário</a></li>
+               <li><a href="#">Cliente</a></li>
+               <li><a href="#">Professor</a></li>
+               <li><a href="#">Curso</a></li>
+               <li><a href="#">Sair</a></li>
+               <li></li>
+            </ul>           
+        </nav>
+        <main id="corpo">
+            <img class="iniciar" src="img/menu.png" alt="abrirmenu" id="imgmenu" onclick="abrirMenu()" >
+            <h1>Cadastro de Cliente</h1>
+            <form>
+                <div>
+                    <input type="text" placeholder="Nome" id="nome">                   
+                </div>
+                <div>
+                    <input type="email" placeholder="email" id="email">                   
+                </div>
+                <div>
+                    <label>Sexo: </label>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="sexo" id="masc">
+                    <label for="femin">Feminino</label>
+                    <input type="radio" name="sexo" id="femin">
+                </div>
+                <fieldset>
+                    <legend>Cursos de interesse</legend>
+                    <div>
+                        <input type="checkbox" name="cursos" id="web">
+                        <label for="web">Curso de desenvolvimento Web</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="cursos" id="mobile">
+                        <label for="web">Curso de desenvolvimento Mobile</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="cursos" id="desktop">
+                        <label for="web">Curso de desenvolvimento Desktop</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label>Estado: </label>
+                    <select name="estado" id="estado">
+                        <option value=>Selecione</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="SP">São Paulo</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Foto: </label>
+                    <input type="file" name="foto" id="foto" value="Selecione sua foto...">
+                </div>
+                <div>
+                    <label for="datanasc">Data de nascimento</label>
+                    <input type="datetime-local" name="datanasc" id="datanasc">
+                </div>
+                <div class="alinha-center" id="button">
+                    <button type="button">Salvar</button>
+                </div>
+            </form>            
+        </main>
+    </body>
+</html>

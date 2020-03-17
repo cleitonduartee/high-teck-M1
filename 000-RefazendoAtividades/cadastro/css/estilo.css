@@ -1,0 +1,107 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+img{
+    width: 30px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+h1{
+    margin: 0px; /*Tira a margem que vem como padrao da tag*/
+    text-align: center; 
+}
+nav{
+    background-color:  rgb(9, 163, 198);
+    float: left; /*fica para esquerda da tela*/
+    width: 30%; /*largura*/
+    height: 100%;/*Altura*/
+    padding: 40px 0px;/* 20px descola parte superior e inferior, ,0px descola partes laterais*/
+    text-align: center;
+    color: white;
+    position: fixed;/*Podemos dizer que mesmo que acha barra de rolagem a div fica fixa*/
+    box-shadow: 5px 0px 10px gray; /*Sobreamento 5px=largura 0px=altura 10px=desfoco da cor */
+    overflow: hidden; /*esconde o conteudo excedente*/
+}
+nav ul{
+    margin: 0px;
+    padding: 0px;/*tira as margen padrao da tag, com isso some os * das li*/    
+}
+nav li{
+    padding: 10px;
+    list-style: none; /*serve para tirar a marcação*/
+}
+nav a{
+    text-decoration: none;/*tira a sublinha das tag ______*/
+    color: white;
+}
+nav li:hover{
+    background-color: rgb(13, 101, 121); /*houver, coloca um sobreamento ao passar o mause*/
+}
+main{
+    float: right;
+    width: 70%;
+    padding: 40px;
+    box-sizing: border-box; /*ocupa o tamanho especificado em width, contando com a margin e padding*/
+   
+}
+form{
+    width: 70%;
+    margin: auto; /*margin-auto, centraliza(dividindo as laterais) o conteudo conforme a largura especificada*/
+}
+form div{
+    margin-top: 20px; /*coloca margin encima de 20px*/
+    margin-bottom: 20px;/* aplica margin enbaixo*/
+   /*margin: 20px 0px;*/
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="datetime-local"]{
+    width: 100%;
+    padding: 10px;
+}
+form button{
+    background-color: rgb(9, 163, 198);
+    border: none; /*tira a borda da tag*/
+    padding: 10px 20px;/*10px= parte superior/inferior e 20px laterais*/
+    color: white;
+}
+form button:hover{
+    background-color: rgb(13, 101, 121);
+    cursor: pointer;
+}
+.alinha-center{
+    text-align: center;
+}
+@media(max-width: 600px){
+    nav{
+        width: 0%;
+    }
+    main{
+        width: 100%;
+    };
+}
+.corpoTotal{
+    width: 100%; 
+    transition: width 1s; /*coloca um deley de 1s na propriedade width*/
+}
+.corpo70{
+    width: 70%; 
+    transition: width 1s; /*coloca um deley de 1s na propriedade width*/
+}
+.menuFechado{
+    width: 0%;
+    transition: width 1s;
+}
+.menuAberto{
+    width: 30%;
+    transition: width 1s;
+}
+.someImg{
+    visibility:hidden /*deixa de mostrar elementeo, mais seu espaço continua ocupado, nao alterando assim a pagina*/
+}
+.iniciar{
+    visibility:hidden
+}
+
