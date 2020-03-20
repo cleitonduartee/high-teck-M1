@@ -1,6 +1,7 @@
 <html>
     <head>
         <script src="js/script.js"></script>
+        <script src="js/validador.js"></script>
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
@@ -17,25 +18,30 @@
         </nav>
         <main id="corpo">
             <img src="img/menu.png" alt="menu" onclick="abrirMenu()" id="imgmenu" class="iniciar">
+           
+            <div id="meensagens" class="mensagens">
+               <img src="img/close.png" alt="Fechar Mensagens" onclick="fechaMensag()">
+             <span id="mensagem"></span>
+           </div>
             <h1>Cadastro de Cliente</h1>
             <div>
                 <form>
                     <div>
-                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Nome" id="nome">
                     </div>
                     <div>
-                        <input type="email" placeholder="email">
+                        <input type="email" placeholder="email" id="email">
                     </div>
                     <div>
                         <label for="sexo">Sexo: </label>
                         <label for="sexo">Masculino</label>
-                        <input type="radio" name="sexo" id="masc">
+                        <input type="radio" name="sexo" id="masc" id="masc">
                         <label for="sexo">Feminino</label>
-                        <input type="radio" name="sexo" id="femin">
+                        <input type="radio" name="sexo" id="fem" id="femin">
                     </div>
                     <fieldset>
                         <legend>Cursos de interesse</legend>
-                        <div>
+                        <div id="cursos">
                             <input type="checkbox" name="curso" id="web">
                             <label>Curso de desenvolvimento Web</label>
                         </div>
@@ -66,7 +72,7 @@
                         <input type="datetime-local" name="nasc" id="nasc">
                     </div>
                     <div class="alinhar">
-                        <button type="button">Salvar</button>
+                        <button type="button" onclick="validar()">Salvar</button>
                     </div>
                 </form>
             </div>
