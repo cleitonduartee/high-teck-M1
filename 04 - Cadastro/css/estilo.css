@@ -21,8 +21,8 @@ nav{
     position: fixed; /* mesmo tendo barra de rolagem, ele fica fixo*/
     text-align: center;/*alinha os texto no centro*/
     color: white;
-    box-shadow: gray 5px 0px 10px;
-    overflow: hidden;
+    box-shadow: gray 5px 0px 10px; /*coloca efeito entre o nav e main*/
+    overflow: hidden; /*corta todo o conteudo ao fechar menu*/
     transition: width 1s;
 }
 nav ul{
@@ -39,6 +39,7 @@ nav a{
 }
 nav li:hover{
     background-color: rgb(13, 101, 121);
+    transition: background-color .7s ;
 }
 main{
     float: right;
@@ -88,7 +89,7 @@ form button:hover{
 @keyframes slide-message{
     from{
         opacity: 0;
-        transform: translate3d(0px, -50px, 0px);
+        transform: translate3d(0px, -100px, 0px);
     }
     to{
         opacity:0.8;
