@@ -1,0 +1,96 @@
+body{
+    background-color: rgb(204, 204, 204);
+    font-family: sans-serif;
+}
+h1{
+    font-weight: normal;
+    margin: 0px;
+    
+    color: rgb(204, 204, 204);
+}
+
+.card{
+    width: 40% ;
+    margin: 30px auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    
+}
+.card div{
+    margin: 15px;
+}
+
+.card input{
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px rgb(204, 204, 204);
+}
+.card button{
+    padding: 10px 15px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    cursor: pointer;
+    border-radius: 30px; /*deixa arredondado*/
+}
+.card button:hover{
+    transform: scale(1.08);
+}
+.tabela{
+    width: 40% ;
+    margin: 30px auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+}
+.tabela h1{
+    padding: 15px;
+}
+#lista{
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+li{
+    width: 100%;
+    padding: 3px;
+    list-style: none;
+    height: 20px;
+
+}
+.esquerdo{
+    float: left;
+    width: 43%;
+    
+    
+}
+.direito{
+    float: right;
+    width: 43%;
+   
+   
+}
+li img{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    
+}
+li span{
+    float: left;
+}
+
+.divtotal{
+    width: 40%;
+    margin: auto;
+    padding-top: 30px;
+    
+    
+}
+#total{ 
+    
+    width: 50%;
+    font-family: monospace;
+   
+    
+ 
+}
