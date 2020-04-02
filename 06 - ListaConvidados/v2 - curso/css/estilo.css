@@ -37,7 +37,37 @@ body{
     cursor: pointer;
     outline: 0;
 }
-.acoes button:hover{
+/* .acoes button:hover{
     background-color: gray;
     color: white;
+    cursor: pointer;
+} */
+#lista div{
+    
+    padding: 2px;
+    display: flex;
+    
+    
+}
+#lista div span{
+    width: 90%;
+    
+}
+#divImg{
+    width: 10%
+}
+#divImg img{
+    cursor: pointer;
+    margin-left: 5px;
+    width: 13px;
+    width: 13px;    
+    
+}
+#divImg  img:hover{
+    transform: scale(1.2);
+}
+#lista span + img{
+    
+    margin-left: 220px;
+    margin-right: 10px;
 }
