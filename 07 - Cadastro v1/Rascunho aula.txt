@@ -1,0 +1,9 @@
+<ul>   ->>> Lista não ordenada
+	<li>
+	<li>
+</ul>
+
+<ol> ->> lista ordenada
+	<li>
+	<li>
+</ol>

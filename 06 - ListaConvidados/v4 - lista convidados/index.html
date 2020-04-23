@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Lista de Convidados</title>
+        <script src="js/script.js"></script>        
+    </head>
+    <body>      
+       <div class="card">
+           <h2>Adicionar Convidado</h2>
+           <div class="input">
+               <input type="text" id="inputNome" placeholder="Nome do Convidado">
+           </div>
+           <div class="input">
+                <input type="number" id="inputIdade" placeholder="Idade do Convidado">
+            </div>
+            <div class="sexo">
+                <label for="masc">Masculino:</label>
+                <input type="radio" name="sexo" value="M" id="masc">
+                <label for="fem">Feminino:</label>
+                <input type="radio" name="sexo" value="F" id="fem">
+            </div>
+           <div class="botoes">
+               <button onclick="obj.salvar()">Adicionar</button>
+               <button onclick="obj.limparDados()">Cancelar</button>
+           </div>
+       </div>
+       <div class="card">
+           <h2>Lista de Convidados</h2>
+          
+           <table>
+               <thead >
+                <tr>
+                   <th >Nome</th>
+                   <th>Idade</th>
+                   <th>Sexo</th>
+                   <th></th>                
+                </tr>                
+               </thead>
+               <tbody id="lista">
+               
+               </tbody>
+           </table>
+           <div class="total">
+            <span id="totalConvidado">Nenhum convidado</span>
+           </div>
+       </div>
+       
+    </body>
+</html>

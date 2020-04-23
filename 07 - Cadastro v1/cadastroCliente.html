@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <script src="js/script.js"></script>
+    <script src="js/validador.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <nav id="menu">
+        <img src="img/close.png" alt="menu" onclick="fecharMenu()" id="imgfechar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="">Cliente</a></li>
+        </ul>
+    </nav>
+    <main id="corpo">
+        <img src="img/menu.png" alt="menu" onclick="abrirMenu()" id="imgmenu" class="iniciar">
+
+        <div id="meensagens" class="mensagens">
+            <img src="img/close.png" alt="Fechar Mensagens" onclick="fechaMensag()">
+            <span id="mensagem"></span>
+        </div>
+        <h1>Cadastro de Cliente</h1>
+        <div>
+            <form>
+                <div>
+                    <input type="text" placeholder="Nome" id="nome">
+                </div>
+                <div>
+                    <input type="email" placeholder="email" id="email">
+                </div>
+                <div>
+                    <label for="sexo">Sexo: </label>
+                    <label for="sexo">Masculino</label>
+                    <input type="radio" name="sexo" id="masc" id="masc">
+                    <label for="sexo">Feminino</label>
+                    <input type="radio" name="sexo" id="fem" id="femin">
+                </div>
+                <fieldset>
+                    <legend>Cursos de interesse</legend>
+                    <div id="cursos">
+                        <input type="checkbox" name="curso" id="web">
+                        <label>Curso de desenvolvimento Web</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="curso" id="mobile">
+                        <label>Curso de desenvolvimento Mobile</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="curso" id="desktop">
+                        <label>Curso de desenvolvimento Desktop</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label>Estado: </label>
+                    <select name="estado" id="estado">
+                        <option value="">Selecione</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="SP">São Paulo</option>
+                    </select>
+                    <div>
+                        <label>Cidade: </label>
+                        <input type="text" placeholder="Cidade">
+                    </div>                
+                    <div  class="alinar-center">
+                         <button type="button" onclick="obj.validar()">Salvar</button>
+                    </div>
+                </div>
+        </form>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Curso(s)</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 body{
     font-family: sans-serif;
-    background-color: #dfdfdf;
+    /* background-color: #dfdfdf; */
+    background-color: red;
 }
 .card{
     background-color: white;
@@ -22,6 +23,7 @@ body{
     font-size: 12pt;
     padding: 10px 0px;
     outline: 0;
+    margin-top: 15px;
 }
 .acoes{
     text-align: center;    
@@ -43,32 +45,58 @@ body{
     cursor: pointer;
     transform: scale(1.1);
 }
-#lista div{
+#divSexo {
     
-    padding: 2px;
-    display: flex;
-    
+    display: flex;    
+    padding: 20px 0px;
+    width: 70%;
+}
+#divSexo input{
+    margin: 4px 25px;
+    width: 15px;
+}
+#divSexo input:hover{
+    cursor: pointer;
+}
+table{    
+    width: 100%;   
+    text-align: center;   
+}
+thead th{
+    color: gray;
+    font-weight: 300;
     
 }
-#lista div span{
-    width: 90%;
-    
+.tnome{
+    width: 55%;
+    text-align: start;
+}
+
+.listaItem{
+    display: flex;
+    padding: 7px 0px;      
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+td, thead th{
+   width: 15%;
+}
+
+
+tbody img{
+    width: 12px;
+    height: 12px;
+   
 }
 #divImg{
-    width: 10%
+    margin: 0px ;
+    text-align: end;
 }
 #divImg img{
+    margin: 0px 2px;    
+}
+#divImg img:hover{
     cursor: pointer;
-    margin-left: 5px;
-    width: 13px;
-    width: 13px;    
-    
-}
-#divImg  img:hover{
-    transform: scale(1.2);
-}
-#lista span + img{
-    
-    margin-left: 220px;
-    margin-right: 10px;
+    transform: scale(1.3);
 }

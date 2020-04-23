@@ -67,6 +67,7 @@ class GerenciadorLista{
         let conteudo = document.getElementById("dadosInput").value;
         document.getElementById(id).innerText = conteudo;
         document.querySelector("button").innerText = "Adicionar";
+        elementoEditar = "";
     }
     editar(id){
         // console.log(id)
@@ -74,6 +75,7 @@ class GerenciadorLista{
         document.getElementById("dadosInput").value = text;
         elementoEditar = id; 
         document.querySelector("button").innerText = "Atualizar";
+       
 
     }
     excluir(id){
