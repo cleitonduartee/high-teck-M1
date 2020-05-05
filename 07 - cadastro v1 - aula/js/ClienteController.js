@@ -1,30 +1,35 @@
-let nome = "";
-let email = "";
-let elementoSexo = null;
-let cursos = null;
-let estado = "";
-let cidade = "";
-let elementoEditar = "";
-let contador = 0;
-let ehValido = false;
-let idEdicao = "";
-
 class ClienteController {
+  
+  constructor(){
+    this.nome = "";
+    this.email = "";
+    this.elementoSexo = null;
+    this.cursos = null;
+    this.estado = "";
+    this.cidade = "";
+    this.elementoEditar = "";
+    this.contador = 0;
+    this.ehValido = false;
+    this.idEdicao = "";
+  }
+
+
+
   lerDados() {
-    nome = document.getElementById("nome").value;
-    email = document.getElementById("email").value;
-    elementoSexo = document.querySelector("input[type=radio]:checked");
-    cursos = document.querySelector("input[type=checkbox]:checked");
-    estado = document.getElementById("estado").value;
-    cidade = document.getElementById("cidade").value;
+    this.nome = document.getElementById("nome").value;
+    this.email = document.getElementById("email").value;
+    this.elementoSexo = document.querySelector("input[type=radio]:checked");
+    this.cursos = document.querySelector("input[type=checkbox]:checked");
+    this.estado = document.getElementById("estado").value;
+    this.cidade = document.getElementById("cidade").value;
   }
 
   salvar() {
     this.lerDados();
     this.validar();
 
-    if (ehValido) {
-      if (elementoEditar == "") {
+    if (this.ehValido) {
+      if (this.elementoEditar == "") {
         this.adicionar();
       } else {
         this.salvarEdicao();
@@ -37,41 +42,41 @@ class ClienteController {
   validar() {
     let buffer = "";
 
-    if (nome == "") {
+    if (this.nome == "") {
       buffer += "O campo nome é obrigatório! \n";
     }
 
-    if (email == "") {
+    if (this.email == "") {
       buffer += "O campo e-mail é obrigatório!\n";
     }
-    if (elementoSexo == null) {
+    if (this.elementoSexo == null) {
       buffer += "Selecione o sexo!\n";
     }
 
-    if (cursos == null) {
+    if (this.cursos == null) {
       buffer += "Escolha pelo menos um curso de interesse!\n";
     }
 
-    if (estado == "") {
+    if (this.estado == "") {
       buffer += "Selecione um estado!\n";
     }
 
-    if (cidade == "") {
+    if (this.cidade == "") {
       buffer += "O campo cidade é obrigatório!\n";
     }
 
     if (buffer != "") {
       document.getElementById("mensagem").innerText = buffer;
       document.getElementById("mensagens").classList.add("show");
-      ehValido = false;
+      this.ehValido = false;
     } else {
-      ehValido = true;
+      this.ehValido = true;
     }
   }
 
   editar(id) {
     
-    idEdicao = id;
+    this.idEdicao = id;
 
     let idLinha = "linha-" + id;
 
@@ -127,7 +132,7 @@ class ClienteController {
     let estado = linha.children[5].innerText;
     document.getElementById("estado").value = estado;
     
-    elementoEditar = "editar";
+    this.elementoEditar = "editar";
 
 
     //TODO: Finalizar preparação pra edição
@@ -136,13 +141,13 @@ class ClienteController {
   salvarEdicao() {
     //TODO: Implementar
     
-    let idLinha = "linha-" + idEdicao;
+    let idLinha = "linha-" + this.idEdicao;
 
     let linha = document.getElementById(idLinha);
 
-    linha.children[0].innerText = nome;
-    linha.children[1].innerText = email;
-    linha.children[2].innerText = elementoSexo.value;
+    linha.children[0].innerText = this.nome;
+    linha.children[1].innerText = this.email;
+    linha.children[2].innerText = this.elementoSexo.value;
 
     let cursosDeInteresse = "";
 
@@ -160,8 +165,8 @@ class ClienteController {
 
 
     linha.children[3].innerText = cursosDeInteresse;
-    linha.children[4].innerText = cidade;
-    linha.children[5].innerText = estado;
+    linha.children[4].innerText = this.cidade;
+    linha.children[5].innerText = this.estado;
     
     this.limpar();
 
@@ -198,16 +203,16 @@ class ClienteController {
       document.getElementById("desktop").checked = false;
     }
 
-    elementoEditar = "";
-    ehValido = false;
-    idEdicao = "";
+    this.elementoEditar = "";
+    this.ehValido = false;
+    this.idEdicao = "";
   }
 
   adicionar() {
     let tabela = document.getElementById("tabela");
 
     let linha = tabela.insertRow();
-    linha.id = "linha-" + contador;
+    linha.id = "linha-" + this.contador;
 
     let colunaNome = linha.insertCell();
     let colunaEmail = linha.insertCell();
@@ -218,11 +223,11 @@ class ClienteController {
     let colunaEditar = linha.insertCell();
     let colunaExcluir = linha.insertCell();
 
-    colunaNome.innerText = nome;
-    colunaEmail.innerText = email;
-    colunaSexo.innerText = elementoSexo.value;
-    colunaEstado.innerText = estado;
-    colunaCidade.innerText = cidade;
+    colunaNome.innerText = this.nome;
+    colunaEmail.innerText = this.email;
+    colunaSexo.innerText = this.elementoSexo.value;
+    colunaEstado.innerText = this.estado;
+    colunaCidade.innerText = this.cidade;
 
     let cursosDeInteresse = "";
 
@@ -244,15 +249,15 @@ class ClienteController {
     let imagemExcluir = document.createElement("img");
 
     imagemEditar.src = "img/editar.svg";
-    imagemEditar.setAttribute("onclick", `controller.editar(${contador})`);
+    imagemEditar.setAttribute("onclick", `controller.editar(${this.contador})`);
 
     imagemExcluir.src = "img/deletar.svg";
-    imagemExcluir.setAttribute("onclick", `controller.excluir(${contador})`);
+    imagemExcluir.setAttribute("onclick", `controller.excluir(${this.contador})`);
 
     colunaEditar.appendChild(imagemEditar);
     colunaExcluir.appendChild(imagemExcluir);
 
-    contador++;
+    this.contador++;
   }
 }
 
