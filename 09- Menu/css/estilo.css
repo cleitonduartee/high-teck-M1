@@ -1,0 +1,16 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+}
+.menu{
+    margin: 20px 0px;
+}
+.opcao{    
+    margin: 10px 75px;
+    padding: 10px 75px;
+    text-align: center;
+    display: none;
+}
+.opcao.exibir{
+    display: block;
+}
