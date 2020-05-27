@@ -30,13 +30,24 @@ class GerenciadorCarro{
     }
     resultado(){
         let divResultado = document.getElementById("resultado");
-        if(this.carros.length>1){
-            let carroMaisNovo = this.verificaCarroMaisNovo();
-            let carroMaisVelho = this.verificaCarroMaisVelho(carroMaisNovo.ano);
-            let mediaCarros = this.verificaMediaCarros(this.carros);
-
-           
-
+        let carroMaisNovo = this.carros[0];
+        let carroMaisVelho = this.carros[0];
+        let somaDosAnos = 0;
+        
+       
+       for(let i=0;i<this.carros.length;i++){
+           if(this.carros[i].ano > carroMaisNovo.ano){
+               carroMaisNovo = this.carros[i];
+           }
+           if(this.carros[i].ano < carroMaisVelho){
+               carroMaisVelho = this.carros[i];
+           }
+           somaDosAnos += parseInt(this.carros[i].ano);
+       }
+       
+       let mediaCarros = parseInt(somaDosAnos / this.carros.length);
+       
+        if(this.carros.length>1){         
             let imprimeResultado = `
             <strong>Carro mais novo: </strong>${    this.formatString(carroMaisNovo.nome)}, ${carroMaisNovo.ano}<br>
             <strong>Carro mais velho: </strong>${    this.formatString(carroMaisVelho.nome)}, ${carroMaisVelho.ano}<br>
@@ -55,40 +66,7 @@ class GerenciadorCarro{
 
 
     }
-    verificaCarroMaisNovo(){
-        let carroNovo;
-        let maior = "0";
-        for(let i =0; i<this.carros.length;i++){
-            
-            if(this.carros[i].ano >maior){
-                maior= this.carros[i].ano;
-                carroNovo = this.carros[i];
-            }        
-        }
-        return carroNovo;
-    }
-    verificaCarroMaisVelho(anoMaisNovo){
-        let carroMaisVelho  = {}
-        let menor = anoMaisNovo
-        for(let i=0;i<this.carros.length;i++){
-            if(this.carros[i].ano < menor){
-                menor = this.carros[i].ano
-                carroMaisVelho = this.carros[i];
-            }
-        }
-        return carroMaisVelho;
 
-    }
-    verificaMediaCarros(carros){
-        let somaAnosdosCarros = null;
-
-        for(let i=0;i<carros.length;i++){
-            somaAnosdosCarros += parseInt(carros[i].ano);
-        }
-        let media = somaAnosdosCarros / carros.length;
-        return parseInt(media);
-
-    }
     cancelar(){
         document.getElementById("inputNome").value = "";
         document.getElementById("inputMarca").value = "";
@@ -163,9 +141,12 @@ class GerenciadorCarro{
     }
     excluir(id){
         if(confirm("Deseja excluir ?")){
-            this.carros.pop(id)
-
-            this.criaTabela(this.carros);
+           for(let i = 0;i< this.carros.length;i++){
+               if(this.carros[i].id == id){
+                   this.carros.splice(i,1)
+               }
+           }
+           this.criaTabela(this.carros);
         }
     }
     salvarEdicao(){
