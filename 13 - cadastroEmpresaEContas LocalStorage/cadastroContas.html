@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav id="menu">
+        <img src="img/close.png" alt="menu" onclick="fecharMenu()" id="imgfechar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="cadastroEmpresa.html">Empresas</a></li>
+        </ul>
+        <ul>
+            <li><a href="cadastroContas.html">Contas</a></li>
+        </ul>
+    </nav>
+    <main id="corpo">
+        <img src="img/menu.png" alt="menu" onclick="abrirMenu()" id="imgmenu" class="iniciar">
+
+        <div id="meensagens" class="mensagens">
+            <img src="img/close.png" alt="Fechar Mensagens" onclick="fechaMensag()">
+            <span id="mensagem"></span>
+        </div>
+        <h1>Cadastro de Constas</h1>
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="row col-6">
+                        <div class="form-group">
+                            <input class="form-control col-12" type="number" placeholder="Valor" id="valor">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control col-12" name="tipo" id="tipo">
+                                <option value="">Selecione</option>
+                                <option value="Receita">Receita</option>
+                                <option value="Despesa">Despesa</option>
+                            </select>
+                        </div>
+                        <div >
+                            <input type="checkbox" name="pago" id="pago">
+                            <label>Paga ?</label>
+                        </div>
+                    </div>
+                    <div class="row col-6">
+                        <div class="input-group mb-5">
+                            <label>Receptor: </label>
+                            <select class="custom-select col-12" name="empresa" id="empresa">                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <div class="container mt-5" style="text-align: center;">
+            <button type="button" class="btn btn-primary" onclick="gerenciadorContas.salvar()">Salvar</button> <button
+                type="button" class="btn btn-primary" onclick="gerenciadorContas.limparFormulario()">Cancelar</button>
+        </div>
+
+        </div>
+
+        <div class="container-fluid mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                        <th>Paga ?</th>
+                        <th>Receptor</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela">
+
+
+
+            </table>
+
+
+            <script src="js/cadastroContas.js"></script>
+</body>
+
+</html>

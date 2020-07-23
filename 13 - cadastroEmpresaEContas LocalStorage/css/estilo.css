@@ -1,0 +1,138 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+img{
+    width: 20px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+h1{
+    margin: 0px;  
+    text-align: center;
+}
+nav{
+    width: 20%; /*largura*/
+    padding: 40px 0px; /*coloca 20px encima/embaixo de margin*/
+    height: 100%; /*altura */
+    background-color: rgb(9, 163, 198); /*cor de fundo*/
+    float: left; /*se posiciona a esquerda*/
+    position: fixed; /* mesmo tendo barra de rolagem, ele fica fixo*/
+    text-align: center;/*alinha os texto no centro*/
+    color: white;
+    box-shadow: gray 5px 0px 10px; /*coloca efeito entre o nav e main*/
+    overflow: hidden; /*corta todo o conteudo ao fechar menu*/
+    transition: width 1s;
+}
+nav ul{
+    padding: 0px;
+    margin: 0px; /*tira as marcações*/
+}
+nav li{
+    padding: 10px;
+    list-style: none;/*tira as marcações*/
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav li:hover{
+    background-color: rgb(13, 101, 121);
+    transition: background-color .7s ;
+}
+main{
+    float: right;
+    width: 80%;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: width 1s;
+}
+form{
+    width: 70%;
+    margin: auto;
+}
+form div{
+    margin: 20px auto ;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="datetime-local"]{
+    width: 100%;
+    padding: 10px;
+}
+.alinar-center{
+    text-align: center;
+}
+form button{
+    background-color: rgb(9, 163, 198);
+    border-style: none;
+    padding: 10px 20px;
+    color: white;
+}
+form button:hover{
+    background-color: rgb(13, 101, 121);
+    cursor: pointer;
+}
+.alinhar{
+    text-align: center;
+}
+@media(max-width: 600px){
+    nav{
+        width: 0%;
+    }
+    main{
+        width: 100%;
+        
+    };
+    main img{
+   display: block;
+   }
+}
+@keyframes slide-message{
+    from{
+        opacity: 0;
+        transform: translate3d(0px, -100px, 0px);
+    }
+    to{
+        opacity:0.8;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+.mensagens{
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    opacity:0.8;
+    width: 60%;
+    animation: slide-message 1s ;
+}
+.mensagens.show{
+    display: block;
+}
+.mensagens img{
+    width: 15px;
+    cursor: pointer;
+    float: right;
+}
+.iniciar{
+    visibility: hidden;
+}
+.fecharMenu{
+    width: 0%;
+    /* transition: width 1s; */
+}
+.mainTotal{
+    width: 100%;
+    /* transition: width 1s; */
+}
+.mainMetade{
+    width: 70%;
+    /* transition: width 1s; */
+}
+.abrirMenu{
+    width: 30%;
+    /* transition: width 1s; */
+}

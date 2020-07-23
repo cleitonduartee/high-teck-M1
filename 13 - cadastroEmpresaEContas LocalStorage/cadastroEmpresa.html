@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    
+    <script src="js/cadastroEmpresas.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body onload="gerenciadorEmpresa.initLS()">
+    <nav id="menu">
+        <img src="img/close.png" alt="menu" onclick="fecharMenu()" id="imgfechar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="cadastroEmpresa.html">Empresas</a></li>
+        </ul>
+        <ul>
+            <li><a href="cadastroContas.html">Contas</a></li>
+        </ul>
+        
+    </nav>
+    <main id="corpo">
+        <img src="img/menu.png" alt="menu" onclick="abrirMenu()" id="imgmenu" class="iniciar">
+
+        <div id="meensagens" class="mensagens">
+            <img src="img/close.png" alt="Fechar Mensagens" onclick="fechaMensag()">
+            <span id="mensagem"></span>
+        </div>
+        <h1>Cadastro de Empresas</h1>
+        <div>
+            <form class="form-group">
+                <div>
+                    <input class="form-control" type="text" placeholder="Nome" id="nome">
+                </div>
+                <div>
+                    <input class="form-control" type="text" placeholder="Endereco" id="endereco">
+                </div>
+                <div>
+                    <input class="form-control" type="text" placeholder="CNPJ" id="cnpj">
+                </div>
+                <div>
+                    <input class="form-control" type="text" placeholder="Razão Social" id="razaoSocial">
+                </div>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-primary" onclick="gerenciadorEmpresa.salvar()">Salvar</button> <button type="button" class="btn btn-primary" onclick="gerenciadorEmpresa.limparFormulario()">Cancelar</button>
+                </div>                
+        </form>
+        </div>
+        <div class="container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>CNPJ</th>
+                        <th>Razão Social</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela">
+                   
+               
+
+            </table>
+        </div>
+
+
+    </main>
+
+
+
+
+
+  
+</body>
+
+</html>

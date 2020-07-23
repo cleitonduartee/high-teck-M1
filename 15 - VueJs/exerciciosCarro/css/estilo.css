@@ -1,0 +1,71 @@
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+#app{
+    width: 700px;   
+    padding: 15px;
+}
+header{   
+    width: 100px;
+    height: 300px;
+    float: left;        
+    margin-top: 25px;
+    border: 0.5px solid black;
+}
+#vermelho{
+    
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    cursor: pointer;
+}
+#branco{
+    
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    cursor: pointer;
+}
+#preto{
+    
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    cursor: pointer;
+}
+main{
+    width: 500px;
+    float: right;   
+}
+.carros{
+    display: flex;
+    width: 700px;
+    height: 250px;    
+}
+.carros>p{ 
+    margin: 150px 0px 0px 25px;   
+    width: 350px;
+    padding: 0px;
+}
+#resulte{
+    width: 250px;
+    margin: 0px auto;
+}
+#resulte>button{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: rgba(128, 128, 128, 0.76);
+    color: white;    
+}
+#resulte>button:hover{
+    transform: scale(1.03);
+}
+img{
+    width: 350px;
+    height: 200px;
+}

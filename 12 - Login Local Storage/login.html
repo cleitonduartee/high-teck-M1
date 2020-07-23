@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Login</title>
+        <script src="js/auth.js"></script>
         <style>
             body{
                 font-family: sans-serif;
@@ -53,14 +54,14 @@
             <img src="https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png" alt="Login" id="imagemP">
             <h1>Log-in</h1>
             <div id=01>
-                <input type="text" placeholder="UserName"/>
+                <input type="text" placeholder="UserName" id="userName"/>
             </div>
 
             <div>
-                <input type="password" placeholder="Password"/>
+                <input type="password" placeholder="Password" id="passWord"/>
             </div> 
             <div>           
-                <button>Login</button>
+                <button onclick="auth.autenticacao()">Login</button>
             </div>
             <div id="links">
                 <a href="register.html">Register</a>|

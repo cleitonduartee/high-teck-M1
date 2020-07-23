@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <div class="imgResult">
+            <div id="cacho">
+                <img :src="src" :alt="alt">
+            </div>
+            
+        </div>
+        <div class="btn">
+            <button @click="cachorro">Cachorro</button>
+            <button @click="gato">Gato</button>
+        </div>
+    </div>
+    <script >
+        var app = new Vue({
+            el: '#app',
+            data:{
+                title: "Exercicio 1",
+               src: "./cachorro.png",
+               alt: "cachorro"
+            },
+            methods:{
+                cachorro: function(){
+                    this.src= "./cachorro.png",
+                    this.alt= "cachorro"
+                },
+                gato: function(){
+                    this.src= "./gato.png",
+                    this.alt= "gato"
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

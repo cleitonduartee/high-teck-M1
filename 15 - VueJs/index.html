@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="cadastrar">
+            <div>
+                <label>Username:</label>
+                <input type="text" v-model="usuarioNovo.userName">
+            </div>
+            <div>
+                <label>Senha:</label>
+                <input type="password" v-model="usuarioNovo.senha">
+            </div>
+            <div>
+                <label>Tipo:</label>
+                <select name="" id="selectInput" v-model="usuarioNovo.tipo">
+                    <option value="Adm" >Admin</option>
+                    <option value="Cliente">Cliente</option>
+                </select>
+            </div>
+            <div>
+                <button v-on:click="salvarCliente">Salvar</button>
+            </div>
+
+        </div>
+        <div v-else>
+            <div>
+                <button v-on:click="cadastrarUsuario">Cadastrar</button>
+            </div>
+        </div>
+        <table v-if="!cadastrar">
+            <thead>
+                <th>Nome</th>
+                <th>Senha</th>
+                <th>Tipo</th>
+            </thead>
+            <tbody>
+                <tr v-for="usuario in usuarios" :key="usuario.userName">               
+                    <td>{{usuario.userName}}</td>
+                    <td>{{usuario.senha}}</td>
+                    <td>{{usuario.tipo}}</td>
+                </tr>
+                
+            </tbody>
+            
+            
+        </table>
+
+
+    </div>
+    
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                usuarios : [],
+                usuarioNovo: {},
+                cadastrar : false,  
+            },
+            methods:{
+                cadastrarUsuario: function(){
+                    this.cadastrar = true;                   
+                },
+                salvarCliente: function(){
+                    
+                    let copiaUsuarioNovo = {}
+                    this.usuarios.push(Object.assign(copiaUsuarioNovo, this.usuarioNovo));
+                    this.cadastrar=false;  
+                    
+                    this.usuarioNovo.userName = ""                    
+                    this.usuarioNovo.senha = ""
+                    this.usuarioNovo.tipo = ""                  
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

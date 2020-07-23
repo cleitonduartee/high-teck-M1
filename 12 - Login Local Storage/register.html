@@ -2,6 +2,7 @@
 
 <head>
     <title>Register</title>
+    <script src="js/localStorage.js"></script>
     <style>        
         #imagemP{
             width: 20%;
@@ -47,15 +48,16 @@
     <div id="register">
         <img src="https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png" alt="Login" id="imagemP">
         <h1>Register</h1>
-        <div><input type="text" placeholder="Nome"></div>
-        <div><input type="text" placeholder="Username"></div>
-        <div><input type="password" placeholder="Password"></div>
+        <div><input type="text" placeholder="Nome" id="name"></div>
+        <div><input type="text" placeholder="Username" id="usarName"></div>
+        <div><input type="password" placeholder="Password" id="passWord"></div>
         <div>
-            <button>save</button>
+            <button type="button" onclick="dados.salvar()">Save</button>
         </div>
         <div id="links">
             <a href="login.html">Back</a>
         </div>
     </div>    
+   
 </body>
 </html>

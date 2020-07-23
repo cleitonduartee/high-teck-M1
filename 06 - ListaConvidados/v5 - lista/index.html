@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Lista de Convidados</title>
+        <script src="js/script.js"></script> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">       
+    </head>
+    <body onload="obj.buscarConvidados()" class="bg-light">
+     <div class="container ">
+        <div class="container mt-5" >
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-7 border  rounded-lg shadow p-3 mb-5 bg-white rounded">
+                    <h1 class="text-center">Adicionar Convidado</h1>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 justify-content-end">
+                            <div class="form-group mt-5 ">
+                                <label for="nome">Nome Convidado</label>
+                                <input type="text" class="form-control" id="inputNome">
+                            </div>
+                            <div class="form-group">
+                                <label for="idade">Idade Convidado</label>
+                                <input type="text" class="form-control" id="inputIdade">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label for="masc" class="form-check-label">Masculino:</label>
+                                <input type="radio" class="form-check-input ml-3" name="sexo" value="M" id="masc">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label for="fem" class="form-check-label">Feminino:</label>
+                                <input type="radio" class="form-check-input ml-3" name="sexo" value="F" id="fem">
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center mt-3 mb-5">
+                                <div id="btn" style="display: inline-block;">
+                                    <button class="btn btn-primary" onclick="obj.salvar()">Salvar</button>
+                                    <button class="btn btn-dark" onclick="obj.limpar()">Cancelar</button>
+                                </div>
+                                <div id="btnEdicao" style="display: none;">
+                                    <button class="btn btn-outline-success" onclick="obj.salvarEdicao()">Atualizar</button>
+                                    <button class="btn btn-outline-dark" onclick="obj.limpar()">Cancelar</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <div class="container ">
+            <div class="row mt-4">
+                <div class="col-3"></div>
+                <div class="col-7 border shadow rounded-lg p-3 mb-5 bg-white rounded">
+                    <h1 class="text-center">Lista de Convidados</h1>
+                    <table class="table">
+                        <table>
+                            <thead >
+                             <tr class="d-flex">
+                                <th class="p-2 flex-grow-1 ">Nome</th>
+                                <th class="p-2 ">Idade</th>
+                                <th class="p-2 ">Sexo</th>
+                                <th class="p-2 "></th>    
+                                <th class="p-2 "></th>             
+                             </tr>                
+                            </thead>
+                            <tbody id="lista">
+                            
+                            </tbody>
+                        </table>
+                        <div class="mt-3 text-center mb-2">
+                         <span id="totalConvidado">Nenhum convidado</span>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>      
+    </body>
+</html>

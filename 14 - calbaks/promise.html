@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Divisão</h1>
+    <div class="row">
+        
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label for="n1">Numero 1</label>
+                <input type="number" class="form-control" id="n1">
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label for="n2">Numero 2</label>
+                <input type="number" class="form-control" id="n2">
+            </div>
+        </div>
+        <div class="container text-center">
+            <button class="btn btn-primary " onclick="realizarDivisao()">Dividir</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function lerDados(){
+        let dados = {}
+        dados.n1 = document.getElementById("n1").value;
+        dados.n2 = document.getElementById("n2").value;
+
+        return dados;
+    }
+
+   function realizarDivisao(){
+        let {n1, n2} = lerDados();
+
+        dividir(n1,n2)
+         .then((res)=> res + 2)
+         .then(imprimiConsole)
+         .then((resp)=>{
+             alert("Final mais 5: " + resp.toFixed(2))
+         })
+         .catch((err)=>{
+             alert(err)
+         })
+
+    }
+    function imprimiConsole(text){
+        console.log(text)
+        return text + 5;
+    }
+    function dividir(n1,n2){
+        return new Promise((resolv,reject)=>{
+            
+        if(n2>0){
+            let resultado = n1 / n2;
+            resolv(resultado);
+            document.getElementById("n1").value = "";
+            document.getElementById("n2").value = "";
+        }else{
+            reject("Divisor tem que ser maior que zero!");
+        }
+        });
+       
+    }
+    
+
+</script>
+    
+</body>
+</html>
