@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,90 +10,88 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
     <div id="app">
         <div class="corpo">
             <header>
-                <div id="branco" @mouseover="mouseOver">                    
+                <div id="branco" @mouseover="mouseOver">
                 </div>
-                <div id="vermelho" @mouseover="mouseOver">  
+                <div id="vermelho" @mouseover="mouseOver">
                 </div>
                 <div id="preto" @mouseover="mouseOver">
                 </div>
             </header>
             <main>
                 <h1>Selecione a Cor</h1>
-                <div class="carros" v-if="branco" value="branco">
-                   <img src="img/Up white.png" alt="">
-                   <p>Volkswagen Up, 2019 - White</p>
+                <div>
+                    <img :src="imagem">
+                    <p>{{descricao}}</p>
                 </div>
-                <div class="carros"  v-if="vermelho" value="vermelho">
-                    <img src="img/Up red.png" alt="">
-                    <p>Volkswagen Up, 2019 - Red</p>
-                </div>
-                <div class="carros" v-if="preto" value="preto">
-                    <img src="img/Up Balck.png" alt="">
-                    <p>Volkswagen Up, 2019 - black</p>
-                </div>
-                <div id="resulte" v-model="mostraTela">
-                    
-                </div>
-            </main>            
+            </main>
+            
+            <div id="resulte" >
+                
+                <button @click="comprar">Comprar</button>
+            </div>
+            {{`Estoque:       
+               Branco - `+branco+
+               `    Vermelho - `+vermelho+
+               `    Preto - `+preto
+            
+            }}
         </div>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                vermelho : true,
-                branco : false,
-                preto : false,
-                carrosVendido: [
-                    {branco:10},
-                    {vermelho:10},
-                    {preto:10},
-                ],
-                carroSelecionado:null
-            },
-            methods:{
-                mouseOver: function(event){
-                    let cor = event.target.id
-                    if(cor=="vermelho"){
-                        this.vermelho = true;
-                        this.branco = false;
-                        this.preto = false;
-                        carroSelecionado = cor;
-                        this.mostraTela;
-                    }
-                    else if (cor=="branco"){
-                        this.vermelho = false;
-                        this.branco = true;
-                        this.preto = false;
-                        carroSelecionado = cor;
-                        this.mostraTela;
-                    }
-                    else{
-                        this.vermelho = false;
-                        this.branco = false;
-                        this.preto = true;
-                        carroSelecionado = cor;
-                        this.mostraTela;
-                    }
-                },
-                vender: function(){
-                    if(this.carroSelecionado == "vermelho"){
-                        this.carrosVendido.vermelho = -1;
-                    }else if(this.carroSelecionado == "branco"){
-                        this.carrosVendido.branco = -1;
-                    }else{
-                        this.carrosVendido.preto = -1;
-                    }
-                },
-                mostraTela: `red: ${this.carrosVendido.vermelho}, white: ${this.carrosVendido.braco}, Balck:${this.carrosVendido.preto} <button>Comprar</button>`
+                imagem: "img/Up white.png",
+                descricao: "Volkswagen Up, 2019 - White",
+                branco:10,
+                vermelho:10,
+                preto:10,
+                carroSelecionado: null,
                 
+            },
+            methods: {
+                mouseOver: function (event) {
+                    let cor = event.target.id
+                    if (cor == "vermelho") {
+                        this.imagem = "img/Up red.png";
+                        this.descricao = "Volkswagen Up, 2019 - Red";
+                        this.carroSelecionado = cor;
+                    }
+                    else if (cor == "branco") {
+                        this.imagem = "img/Up white.png";
+                        this.descricao = "Volkswagen Up, 2019 - White"
+                        this.carroSelecionado = cor;
+                    }
+                    else {
+                        this.imagem = "img/Up Balck.png";
+                        this.descricao = "Volkswagen Up, 2019 - Black"
+                        this.carroSelecionado = cor;
+                    }
+                },
+                comprar: function () {
+                    if (this.carroSelecionado == "vermelho") {
+                        if(this.vermelho == 0) return alert("Produto indisponível")
+                        this.vermelho += -1;
+                    } else if (this.carroSelecionado == "branco") {
+                        if(this.branco == 0) return alert("Produto indisponível")
+                        
+                        this.branco += -1;
+                    } else {
+                        if(this.preto == 0) return alert("Produto indisponível")
+                        this.preto += -1;
+                    }
+                },
+
+
             }
         })
     </script>
-    
+
 </body>
+
 </html>

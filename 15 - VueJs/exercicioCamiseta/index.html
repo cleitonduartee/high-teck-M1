@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    body{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    img{
+        width: 60px;
+        height: 60px;
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    h2{
+        margin: 10px;
+    }
+    .container{
+        width: 65%;
+        margin: 0px auto;
+        display: flex;
+        padding: 5px 0px;
+        justify-content: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.199);;
+    }
+    .imagem{
+        margin-top: 5px;
+        padding: 0px 25px;        
+    }
+    .containerDados{
+        padding: 0px 42px; 
+        text-align: center;
+    }
+    .preco{
+        margin-top: 25px;
+        padding: 0px 30px;
+    }
+    .btnAdicionar{
+        margin-top: 15px;   
+        padding: 2px 25px;     
+    }
+    .containerCompra{
+        text-align: center;
+        margin-top: 40px;
+    }
+    button{
+        padding: 10px;
+        border: none;
+        background-color: rgba(46, 46, 248, 0.829);
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;        
+    }
+    button:hover{
+        transform: scale(1.035);
+    }
+</style>
+<body>
+    <div id="app">
+
+        <h1>{{title}}</h1>
+
+        <div class="container" v-for="produto in produtos">            
+            <div class="imagem">
+                <img src="img/camiseta2.png">
+            </div>
+            <div class="containerDados">
+                <div>
+                    Nome: {{produto.nome}}
+                </div>
+                <div>
+                    Qtd: {{produto.qtd}}
+                </div>
+                <div>
+                    Descrição: {{produto.descricao}}
+                </div>
+            </div>
+            <div class="preco">
+                {{'R$'+(produto.preco).toFixed(2)}}
+            </div>
+            <div class="btnAdicionar">
+                <button @click="adicionar(produto)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        <div class="containerCompra">
+            <div>
+                <h2>Quantidade de produtos no carrinho: {{produtosNocarrinho.length}}</h2>
+            </div>
+            <div>
+                <h2>Valor total: R$  {{ total.toFixed(2) }}</h2>
+            </div>
+            <div>
+                <button @click="finalizar">Finalizar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       var app = new Vue({
+            el:'#app',
+            data:{
+                title: "Loja HT",
+                produtos: [{
+                    nome: "Camiseta Branca",
+                    qtd: 10,
+                    descricao: "Camiseta branca de algodão. Lacoste",
+                    preco: 25.90
+                },
+                {
+                    nome: "Camiseta Branca",
+                    qtd: 10,
+                    descricao: "Camiseta branca de algodão. Lacoste",
+                    preco: 25.90
+                },
+                {
+                    nome: "Camiseta Branca",
+                    qtd: 10,
+                    descricao: "Camiseta branca de algodão. Lacoste",
+                    preco: 25.90
+                },
+                {
+                    nome: "Camiseta Branca",
+                    qtd: 10,
+                    descricao: "Camiseta branca de algodão. Lacoste",
+                    preco: 25.90
+                }],
+                produtosNocarrinho:[],
+                total: 0,
+            },
+            methods:{
+                adicionar(produto){ 
+                    if(produto.qtd == 0) return alert("Produto Indisponível");
+
+                   this.produtosNocarrinho.push(produto);
+                   this.total += produto.preco;
+                   produto.qtd += -1;
+                },
+                finalizar(){
+                    this.produtosNocarrinho = [];
+                    this.total = 0;
+
+                    for (let i = 0; i < this.produtos.length; i++) {
+                        this.produtos[i].qtd = 10;
+                    }                  
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
