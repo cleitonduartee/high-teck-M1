@@ -66,7 +66,7 @@
 
         <h1>{{title}}</h1>
 
-        <div class="container" v-for="produto in produtos">            
+        <div class="container" v-for="produto,index in produtos" >            
             <div class="imagem">
                 <img src="img/camiseta2.png">
             </div>
@@ -116,30 +116,30 @@
                     nome: "Camiseta Branca",
                     qtd: 10,
                     descricao: "Camiseta branca de algodão. Lacoste",
-                    preco: 25.90
+                    preco: 20.90
                 },
                 {
                     nome: "Camiseta Branca",
                     qtd: 10,
                     descricao: "Camiseta branca de algodão. Lacoste",
-                    preco: 25.90
+                    preco: 12.90
                 },
                 {
                     nome: "Camiseta Branca",
                     qtd: 10,
                     descricao: "Camiseta branca de algodão. Lacoste",
-                    preco: 25.90
+                    preco: 10.90
                 }],
                 produtosNocarrinho:[],
                 total: 0,
             },
             methods:{
-                adicionar(produto){ 
+                adicionar(produto){                    
                     if(produto.qtd == 0) return alert("Produto Indisponível");
 
                    this.produtosNocarrinho.push(produto);
                    this.total += produto.preco;
-                   produto.qtd += -1;
+                   produto.qtd--;
                 },
                 finalizar(){
                     this.produtosNocarrinho = [];

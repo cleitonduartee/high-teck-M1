@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Adicionar Convidado</h1>
+        <div class="formGroup">
+            <label for="nome">Nome</label>
+            <input type="text" v-model="convidadoAtual.nome">
+        </div>
+        <div class="formGroup">
+            <label for="idade">Idade</label>
+            <input type="number" v-model="convidadoAtual.idade">
+        </div>
+        <div class="formGroup">
+            <label for="sexo">Sexo</label>
+            <input type="text" v-model="convidadoAtual.sexo">
+        </div>
+
+        <list-convidado :convidado="convidadoAtual"></list-convidado>        
+    </div>    
+</body>
+    <script>
+       Vue.component("list-convidado", {
+        props:['convidado'],
+        template:`
+            <div>
+               <button type="buton" @click="adicionar">Adicionar</button>
+                
+               <ol>
+                    <li v-for="conv,index in convidados" :key="index">
+                    {{conv.nome}}, {{conv.idade}}, {{conv.sexo}}
+                    </li>
+                </ol>
+              
+            </div>
+        `,
+        data(){
+            return{
+                convidados:[],
+            }
+        },
+        methods:{
+            adicionar(){
+                let conv = {}
+                Object.assign(conv, this.convidado)                
+                this.convidados.push(conv)
+            }
+        }
+       });
+
+
+       var app = new Vue({
+           el:'#app',
+           data:{
+               convidadoAtual: {},
+           }
+       })
+    </script>
+</html>
