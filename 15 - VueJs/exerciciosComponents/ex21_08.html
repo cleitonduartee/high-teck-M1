@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Usuários Cadastrados</h1>
+        <form-list @passarconvidado="adicionar"></form-list>
+
+        <table>
+            <thead>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+            </thead>
+            <tbody>
+                <tr v-for="conv,index in convidados" :key="index">
+                    <td>{{ conv.nome }}</td>
+                    <td>{{ conv.idade }}</td>
+                    <td>{{ conv.sexo }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    Vue.component('form-list',{
+        template:`
+        <div>        
+            <input type="text" placeholder="Nome" v-model="convidado.nome">
+            <input type="text" placeholder="Idade" v-model="convidado.idade">
+            <input type="text" placeholder="Sexo" v-model="convidado.sexo">
+            <div>
+                <button @click="adicionardConvidado">Adicionar</button>
+            </div>
+        </div>
+        `,
+        data(){
+            return{
+                convidado:{}
+            }
+        },
+        methods:{
+            adicionardConvidado(){
+                this.$emit('passarconvidado', this.convidado)
+                this.convidado = {}
+            }
+        }
+    })
+    var app = new Vue({
+        el:'#app',
+        data:{
+            convidados:[],
+        },
+        methods:{
+            adicionar(convidado){
+                this.convidados.push(convidado)
+            }
+        }
+
+    })
+</script>
+</html>
